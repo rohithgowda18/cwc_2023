@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cwc 2023</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        * {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            border: border-box;
+        }
+        .navbar {
+            height: 140px;
+            background-color: rgb(5, 37, 76);
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .nav-logo {
+            height: 140px;
+            width: 180px;
+        }
+        .logo {
+            background-image: url("https://i0.wp.com/img.etimg.com/thumb/width-1200,height-900,imgsize-213722,resizemode-75,msid-101300638/news/sports/icc-unveils-world-cup-schedule-india-to-face-pak-on-oct-15.jpg?strip=all");
+
+            background-size: cover;
+            height: 140px;
+            width: 100%;
+            border-radius: 50%;
+        }
+        .border {
+            border: 1.5px solid transparent;
+        }
+        .border:hover {
+            border: 1.5px solid white;
+        }
+        .main-content {
+            display: flex;
+            align-items: center;
+            margin-left: 60px;
+            background-image: linear-gradient(rgb(220, 107, 14), rgb(98, 216, 14));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-color: rgba(247, 247, 247, 0.414);
+        }
+        .Cricket-Hub {
+            font-size: 75px;
+            margin: 10px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border: 1.5px solid transparent;
+        }
+        .Cricket-Hub:hover {
+            border: 1.5px solid white;
+        }
+        .nav-search {
+            margin-left: 30px;
+            display: flex;
+            background-color: rgba(255, 166, 0, 0.714);
+            width: 380px;
+            height: 35px;
+            border-radius: 4px;
+            justify-content: space-evenly;
+        }
+        .search-input {
+            width: 100%;
+            font-size: 1rem;
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+            border: none;
+        }
+        .search-icon {
+            width: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            background-color: #febd68;
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+            color: #0f1111;
+        }
+        span {
+            font-size: 0.75rem;
+        }
+        .nav-second {
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        .nav-settings {
+            display: flex;
+            justify-content: center;
+        }
+        .nav-second {
+            font-size: 1rem;
+        }
+        .nav-signin:hover {
+            border: 1.5px solid white;
+        }
+        .nav-settings:hover {
+            border: 1.5px solid white;
+        }
+        a:hover {
+            color: rgb(0, 255, 60);
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        .nav-main {
+            height: 40px;
+            background-color: #5479d785;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        * {
+            box-sizing: border-box
+        }
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            background-color: powderblue;
+        }
+        .mySlides {
+            display: none;
+            margin-left: 0;
+        }
+        img {
+            vertical-align: middle;
+        }
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 900px;
+            position: relative;
+            margin: auto;
+            margin-top: 25px;
+            border: 5px solid black;
+        }
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: rgb(6, 5, 5);
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .prev:active,
+        .next:active {
+            background-color: black;
+        }
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        button {
+            margin-left: 46%;
+            font-weight: bolder;
+            position: relative;
+            height: 45px;
+            width: 110px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: ivory;
+            font-size: large;
+        }
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .prev,
+            .next,
+            .text {
+                font-size: 11px
+            }
+        }
+        footer {
+            margin-top: 15px;
+            background-color: #37475a;
+            height: 200px;
+        }
+        .main3copy {
+            color: white;
+            height: 20px;
+            display: flex;
+            margin-top: 25px;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.9rem;
+        }
+        .box {
+            height: 350px;
+            width: 30%;
+            border: 2px solid snow;
+        }
+        .mainsection {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        table{     width: 100%;
+      }
+        .td1,.th1{
+          text-align: center;
+          width: 100%;
+        }
+        th,td{
+          font-size: 1.2rem;
+          text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+                <div class="logo"></div>
+            </div>
+            <div class="main-content">
+                <div class="Cricket-Hub">CRICKET HUB</div>
+            </div>
+            <div class="nav-search">
+                <input placeholder="Search here" class="search-input" />
+                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+            <div class="nav-signin">
+                <p><span><a href="sign-in.html">Hello,sign in</a></span></p>
+                <p class="nav-second">Accounts</p>
+            </div>
+            <div class="nav-settings">
+                <div class="Settings-icon"><i class="fa-sharp fa-solid fa-gear"></i></div>
+                <p class="nav-second">Settings</p>
+            </div>
+    </header>
+    <nav class="nav-list">
+        <div class="nav-main">
+            <div class="nav-menu"><a href="index.html"><i
+                        class="fa-solid fa-house"></i>Home</a></div>
+            <div class="scorecard"><a href="scorecard.html">Scorecard</a></div>
+            <div class="teams"><a href="teams.html">Teams</a></div>
+            <div class="points-table"><a href="points.html">Points Table</a>
+            </div>
+            <div class="ranking"><a href="rank.html">Ranking</a></div>
+            <div class="about-us"><a href="https://cricbuzz.com">Know More</a>
+            </div>
+        </div>
+    </nav>
+    <body>
+        <div class="slideshow-container" style="margin-left: 280px; margin-top: 8px; width: 60%;  ">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 5</div>
+                <img src="https://assets.telegraphindia.com/telegraph/2023/Nov/1700124205_virat-lead-2.jpg"
+                    width="100%">
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 5</div>
+                <img src="https://cdn.wisden.com/wp-content/uploads/2023/11/GettyImages-1771339625-980x530.jpg"
+                    width="100%">
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 5</div>
+                <img src="https://www.hindustantimes.com/ht-img/img/2023/11/02/550x309/PTI11-02-2023-000310B-0_1698935581823_1698935644646.jpg"
+                    style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">4/ 5</div>
+                <img src="https://img.jagranjosh.com/images/2023/November/19112023/2023-odi-world-cup-winner-australia.webp"
+                    style="width:100%">
+
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">5/ 5</div>
+                <img src="rohirat.jpeg"
+                    style="width:100%" height="400px">
+
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+        </div>
+        <br>
+
+        <div style="margin-left: 650px;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
+        <br>
+
+  
+        <pre style="font-size: 1.2rem; font-family:'Courier New', Courier, monospace"><b>                  The 2023 Cricket World Cup, officially known as the 2023 ICC Men's Cricket World Cup, was the 13th edition of the Cricket World Cup.  It started 
+ on 5 October and concluded on 19 November 2023, with Australia winning the tournamentA quadrennial One Day International (ODI) cricket tournament
+ contested by national teams,it was organised by the <abbr title="international cricket council">ICC</abbr> Ten national teams participated in the tournament.It was the first men's Cricket World Cup which 
+ India hosted solely. The tournament took place in ten different stadiums in ten cities across the country.
+         <br>                In the first semi-final India beat New Zealand, and in the second semi-final Australia beat South Africa.The final took place between India and 
+Australia at Narendra Modi Stadium on 19 November with Australia winning the title for the sixth time.<br>
+</b></pre>
+<table style="width: 100%"><b>
+  <tr>
+    <th class="th1"colspan="2" style="font-size: 1.4rem; text-align:center; color: blue;">
+ <h3>ICC Men's Cricket World Cup</h3>
+    </th>
+  </tr>
+  <tr>
+    <td class="td1" style="margin-left: 30px;"><img src="https://imgs.search.brave.com/yTfT7FNexcaV6efax7Edl5t4GrGDjt6Iw1sjGh6z8N0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTI2/ODAzNTAvcGhvdG8v/bWVsYm91cm5lLWF1/c3RyYWxpYS10aGUt/aWNjLWNyaWNrZXQt/d29ybGQtY3VwLXRy/b3BoeS1vbi1kaXNw/bGF5LWR1cmluZy1h/LXBob3RvLXNob290/LW9uLW1hcmNoLTYu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PUl4UUZtcnlFWnk0/VHlicnFtUHpacFdO/elhDY1IzTU9FTFZQ/Z3ZHYWlwaG89" alt="cup" width="150px" height="250px" style="border: #0f1111 solid 3px;" >
+    </td>
+  </tr>
+  <br>
+</table>
+<table style="margin-top: 50px; margin-left:10px;">
+  <tr>
+    <td>Administrator</td>
+    <td>:</td>
+    <td>International cricket council</td>
+  </tr>
+  <tr>
+    <td>Format</td>
+    <td>:</td>
+    <td >One day international</td>
+  </tr>
+  <tr>
+    <td>First edition</td>
+    <td>:</td>
+  <td>1975 ,England</td></tr>
+  <tr>
+    <td>Lastest edition</td>
+    <td>:</td>
+  <td>2023 ,India</td></tr>
+  <tr>
+    <td>Next edition</td>
+    <td>:</td>
+  <td>2027 ,South Africa</td></tr>
+  <tr>
+    <td>Number of teams</td>
+    <td>:</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>Current champion</td>
+    <td>:</td>
+    <td>Australia(6th title)</td>
+  </tr>
+  <tr>
+    <td>Most successful</td>
+    <td>:</td>
+    <td>Australia(6 times)</td>
+  </tr>
+  <tr>
+    <td>Most Runs</td>
+    <td>:</td>
+    <td>Sachin Tendulkar(2278)</td>
+  </tr>
+  <tr>
+    <td>Most wickets</td>
+    <td>:</td>
+    <td>Glenn McGrath(71)</td>
+  </tr>
+  <tr>
+    <td>Website</td>
+    <td>:</td>
+    <td><a href="https://www.cricketworldcup.com" style="text-decoration: none; color:#0f1111">ICC</a></td>
+  </tr>
+
+</table>
+<pre style="font-size: 1.2rem; font-family:'Courier New', Courier, monospace"><b>
+<h2 style="color: #065bc3;"><u>History:</u></h2>
+                The first international cricket match was played between Canada and the United States, on 24 and 25 September 1844. However, the first credited
+Test and  match was played in 1877 between Australia and England, and the two teams competed regularly for The Ashes in subsequent years. South Africa
+was admitted to Test status in 1889.Representative cricket teams were selected to tour each other, resulting in bilateral competition.Cricket was also included 
+as an Olympic sport at the 1900 Paris Games, where Great Britain defeated France to win the gold medal.This was the only appearance of cricket at the 
+Summer Olympics.
+
+        The first multilateral competition at international level was the 1912 Triangular Tournament, a Test cricket tournament played in England between all
+ three Test-playing nations at the time: England, Australia and South Africa.The event was not a success: the summer was exceptionally wet, making play
+ difficult on damp uncovered pitches, and crowd attendances were poor, attributed to a "surfeit of cricket". Since then, international Test cricket has 
+ generally been organised as bilateral series: a multilateral Test tournament was not organised again until the triangular Asian Test Championship in 1999.
+ The number of nations playing Test cricket increased gradually over time, with the addition of West Indies in 1928, New Zealand in 1930,India in 1932, and 
+ Pakistan in 1952. However, international cricket continued to be played as bilateral Test matches over three, four or five days.
+
+       In the early 1960s, English county cricket teams began playing a shortened version of cricket which only lasted for one day. Starting in 1962 with a 
+four-team knockout competition known as the Midlands Knock-Out Cup,and continuing with the inaugural Gillette Cup in 1963, one-day cricket grew in popularit
+in England. A national Sunday League was formed in 1969. The first One-Day International match was played on the fifth day of a rain-aborted Test match between 
+ England and Australia at Melbourne in 1971, to fill the time available and as compensation for the frustrated crowd. It was a forty over game with eight balls
+per over. The success and popularity of the domestic one-day competitions in England and other parts of the world, as well as the early One-Day Internationals, 
+prompted the ICC to consider organizing a Cricket World Cup.<br>
+       </b> </pre>
+        <div class="mainsection">
+            <div class="box1 box">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Msc6xy6a7e8?si=cO7yVQ9zRYzwWaQX"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="box2 box">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/fOvf9zAhTyk?si=Qq7MOpNzzHXDhjyI"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="box3 box">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/70K4tV12uEw?si=KuXTo1bgUIfJ-2cf"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        <br><br>
+        <h2 style="color: #065bc3;"><u>Top Moments of CWC 2023:</u></h2><br>
+        <h2 >Kohli goes past Sachin:</h2>
+        <a href="https://www.thehindubusinessline.com/news/sports/virat-kohli-hits-historic-50th-odi-hundred-surpasses-idol-sachin-tendulkar/article67535912.ece"><img src="https://assets.telegraphindia.com/telegraph/2023/Nov/1700124205_virat-lead-2.jpg" alt="cup" width="45%" height="35%" style="border: #0f1111 solid 3px;margin-left:400px" ></a><br><br>
+        <p style="font-size: 1.2rem; font-family:'Courier New', Courier, monospace"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Virat Kohli celebrates his 50th century,
+             breaking Sachin Tendulkar’s most ODI hundreds record, during the ICC Men’s Cricket World Cup 2023 
+             semi-final match between India and New Zealand. Virat Kohli’s chase of Sachin Tendulkar’s record for
+             most ODI hundreds, a mark thought by many to be insurmountable, finally ended, with the moment coming
+             in India’s semifinal win against New Zealand in Wankhede.Kohli celebrated the occasion by bowing to 
+             Sachin, who was in the stand, applauding the man who went past his figure of 49 ODI hundreds.Kohli
+             would also erase Sachin’s record for most runs in an ODI World Cup, taking the flag from the latter’s
+             mark of 673 in 2003 to place it at 765 by the end of the tournament.</b></p><br><br>
+        <h2>Maxwell Madness:</h2>
+     <a href="https://crickettimes-com.webpkgcache.com/doc/-/s/crickettimes.com/2023/10/cwc-2023-cricket-world-erupts-as-glenn-maxwell-notches-the-fastest-odi-world-cup-century/"> <img src="https://ss-i.thgim.com/public/incoming/ul4zkr/article67557338.ece/alternates/FREE_1200/IMG_11908_7_11_2023_22_7_2_1_08C029VP.jpg" alt="cup" width="45%" height="35%" style="border: #0f1111 solid 3px;margin-left:400px" ></a><br><br>
+        <p style="font-size: 1.2rem; font-family:'Courier New', Courier, monospace"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Australia was on the  verge of
+             a shocking defeat to Afghanistan. It was reeling at 91 for seven, in a chase of 292. That is icc-unveils-world-cup-schedule-india-to-face-pak-on-oct-15
+             Glenn Maxwell decided to intervene. Australia’s Glen Maxwell during ICC Cricket World Cup 2023 Match 39 
+            between Afghanistan and Australia at Wankhede Stadium in Mumbai.  The Aussie batter was unbothered by
+            the intense pressure. He struck boundaries with ease, while his skipper Pat Cummins blocked everything 
+            thrown at him, scoring a 68-ball 12. Maxwell also had to brave immense physical strain, with the
+             batter often crumbling to ground due to cramps. But the 35-year-old hobbled back on to his feet,
+              hitting 21 fours and 10 sixes on the way to becoming the first ODI batter to score a double hundred
+               in chase. His logic-defying knock helped Australia to a three-wicket win, a vital step in its 
+               eventual title win.</b></p><br><br>
+
+        <h2>Indian bowlers’ day out:</h2>
+       <a href="https://zeenews.india.com/cricket/icc-cricket-world-cup-2023-team-india-bowling-attack-hunt-in-pack-steamroll-rohit-sharma-s-side-to-eighth-successive-win-jasprit-bumrah-mohammad-shami-ravindra-jadeja-mohammed-siraj-kuldeep-yadav-2684756.html"><img src="https://circleofcricket.com/post_image/post_image_66d942b.jpg" alt="cup" width="45%" height="35%" style="border: #0f1111 solid 3px;margin-left:400px" ></a><br><br>
+        <p style="font-size: 1.2rem; font-family:'Courier New', Courier, monospace"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Each ball was an event. Each delivery 
+            threatened a wicket. The fact that Sri Lanka got to 55 against India at the Wankhede is itself a 
+            miracle. The Lankan top-five collectively aggregated a total of two runs as Jasprit Bumrah, Mohammed
+             Shami and Mohammed Siraj cut through the batting lineup.
+            Mohammed Shami, Mohammed Siraj and Jaspreet Bumrah celebrate during a World Cup match. 
+            The Indian pacers were unrelenting as they helped India to a mammoth 302-run win and seal a semifinal spot. Their fiery performance was also the definite blow on an already dying Sri Lankan hopes for a semifinal spot.
+         </b></p><br><br><br>
+         <div style="display: inline;">
+         <div style="border: 3px double black; display: inline;padding: 18px;">
+         <h2 style="color: #065bc3; display:inline">For Future Updates,</h2>
+         <h2 style="display: inline; color: #065bc3;">Subscribe Us:</h2>
+         <button style="margin-left: 50px;"><a href="subscription.html" style="text-decoration:none; color:black;">Subscribe</a></button>
+         </div>
+         <br><br>
+         <h2>Want To Play Game:</h2>
+         <h2>Then click on this game&nbsp;&nbsp;<a href="game.html"><img src="https://images.odishatv.in/uploadimage/library/16_9/16_9_2/IMAGE_1659689158.jpg" style="height: 20%; width: 20%; border-radius: 50%; border: 3px solid white;"></a></h2>
+            </div>
+        <footer>
+            <br>
+            <p class="copyright" style="text-align: center; color: wheat;">
+                Copyright © Powered By <a href="https://chat.whatsapp.com/IurS6DiVKcP1JfvoFjm1pM">SIGMA</a> @2023
+            </p>
+            <br>
+
+            <p style="text-align: center;"><a href="#!">Terms of Service</a> | <a href="#!">Privacy Policy</a></p>
+
+            <div class="main3copy">
+                <a href="https://www.instagram.com/rohithgowda.18?igsh=MTRsNjN4NmdjMDN2dg=="><i class="fa-brands fa-instagram"
+                        style="color: #c11571;  margin-right: 18px; "></i></a>
+                <a href="https://chat.whatsapp.com/IurS6DiVKcP1JfvoFjm1pM"><i class="fa-brands fa-whatsapp"
+                        style="color: #15c149;  margin-right: 18px; "></i></a>
+                <a href="https://x.com/Mr_V555?t=AMxvhxTdW3jBhFpwrPc2MQ&s=08"><i class="fa-brands fa-square-x-twitter"
+                        style="color: hsl(0, 12%, 94%);  margin-right: 18px;"></i></a>
+                <a href=""> <i class="fa-brands fa-square-facebook"
+                        style="color: rgb(67, 190, 228); margin-right: 18px;"></i></a>
+                <a href="https://www.linkedin.com/in/rohithgowdak18?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                        class="fa-brands fa-linkedin" style="color: #0f95ee; margin-right: 18px;"></i></a>
+                
+            </div>
+
+        </footer>
+
+    </body>
+
+</html>https
