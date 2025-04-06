@@ -37,7 +37,7 @@ This project is licensed under the **MIT License**. For more details, please ref
 
 ## 📬 Contact
 For any inquiries or feedback, feel free to reach out:
-- **Rohith**: [rohithgowdak18@gmail.com](mailto:rohithgowdak18@gmail.com)
+- **EMail**: [rohithgowdak18@gmail.com](mailto:rohithgowdak18@gmail.com)
 - **GitHub**: [rohithgowda18](https://github.com/rohithgowda18)
 
 ---
